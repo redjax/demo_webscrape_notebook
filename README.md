@@ -23,6 +23,7 @@ There are also [other websites you can use for practice](https://toscrape.com) (
   - [Jupyter](#jupyter)
   - [HTTPX + Hishel](#httpx--hishel)
 - [BeautifulSoup](#beautifulsoup)
+- [Pre-commit \& nbstripout](#pre-commit--nbstripout)
 
 ## Run this notebook
 
@@ -91,3 +92,9 @@ In a Jupyter notebook, it's better to uses the first method of initializing a cl
 ## BeautifulSoup
 
 [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/), also known as `bs4`, is a popular Python package to assist with scraping data from HTML responses. It works with the raw HTML in a response, meaning it [is not suited for highly dynamic pages, like single page apps (SPAs)](https://github.com/oxylabs/Scraping-Dynamic-JavaScript-Ajax-Websites-With-BeautifulSoup) on its own. If you need to scrape dynamic pages, you can use a browser automation suite like [Selenium](https://github.com/oxylabs/Scraping-Dynamic-JavaScript-Ajax-Websites-With-BeautifulSoup#scraping-dynamic-web-pages-with-selenium) to proxy the request, load the dynamic content, & parse the response with BeautifulSoup.
+
+## Pre-commit & nbstripout
+
+Oftentimes you do not want to store the output of your Jupyter notebook in source control. Instead of remembering to click "clear outputs" every time you're ready to commit, you can use a [`pre-commit` hook](). The [included `.pre-commit-config.yaml`](.pre-commit-config.yaml) includes a hook for [`nbstripout`](https://github.com/kynan/nbstripout).
+
+If you run `pre-commit install` the first time you clone this repository (after [setting up your virtualenv](#run-this-notebook)), every `.ipynb` file will be scanned each time you attempt to commit it; if there is any output in the cells, it strips it and intercepts the file being committed to git. This sometimes causes an error in VSCode, which you can get around by closing the error and re-committing the file.
