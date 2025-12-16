@@ -99,4 +99,4 @@ Oftentimes you do not want to store the output of your Jupyter notebook in sourc
 
 If you run `pre-commit install` the first time you clone this repository (after [setting up your virtualenv](#run-this-notebook)), every `.ipynb` file will be scanned each time you attempt to commit it; if there is any output in the cells, it strips it and intercepts the file being committed to git. This sometimes causes an error in VSCode, which you can get around by closing the error and re-committing the file.
 
-You can also setup a Github Action to run `nbstripout` on pushes/PRs to `main`. See the [included `pre-commit.yml` Action](./.github/actions/precommit.yaml).
+You can also setup a Github Action to run `nbstripout` on pushes/PRs to `main`. See the [included `pre-commit.yml` Action](./.github/workflows/precommit.yaml).
