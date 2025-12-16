@@ -18,10 +18,33 @@ There are also [other websites you can use for practice](https://toscrape.com) (
 ## Table of Contents <!-- omit in toc -->
 
 - [Warning about web scraping](#warning-about-web-scraping)
+- [Run this notebook](#run-this-notebook)
 - [Tools Used](#tools-used)
   - [Jupyter](#jupyter)
   - [HTTPX + Hishel](#httpx--hishel)
 - [BeautifulSoup](#beautifulsoup)
+
+## Run this notebook
+
+Prepare the environment:
+
+```shell
+## Create a virtualenv
+#  If you get an error that virtualenv is not found, install with python3 -m pip install -U virtualenv
+virtualenv .venv
+
+## Activate the virtualenv
+. .venv/bin/activate # mac/linux
+
+# OR
+
+. ..venv\\Scripts\\activate # windows
+
+## Install the requirements
+pip install -r requirements.txt
+```
+
+Then, open the Jupyter notebook and set the kernel to the `virtualenv` (should be automatically discovered). Use the `Run all` button in Jupyter to run the full notebook.
 
 ## Tools Used
 
