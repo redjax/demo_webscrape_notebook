@@ -95,6 +95,8 @@ In a Jupyter notebook, it's better to uses the first method of initializing a cl
 
 ## Pre-commit & nbstripout
 
-Oftentimes you do not want to store the output of your Jupyter notebook in source control. Instead of remembering to click "clear outputs" every time you're ready to commit, you can use a [`pre-commit` hook](). The [included `.pre-commit-config.yaml`](.pre-commit-config.yaml) includes a hook for [`nbstripout`](https://github.com/kynan/nbstripout).
+Oftentimes you do not want to store the output of your Jupyter notebook in source control. Instead of remembering to click "clear outputs" every time you're ready to commit, you can use a [`pre-commit` hook](https://github.com/pre-commit/pre-commit). The [included `.pre-commit-config.yaml`](.pre-commit-config.yaml) includes a hook for [`nbstripout`](https://github.com/kynan/nbstripout).
 
 If you run `pre-commit install` the first time you clone this repository (after [setting up your virtualenv](#run-this-notebook)), every `.ipynb` file will be scanned each time you attempt to commit it; if there is any output in the cells, it strips it and intercepts the file being committed to git. This sometimes causes an error in VSCode, which you can get around by closing the error and re-committing the file.
+
+You can also setup a Github Action to run `nbstripout` on pushes/PRs to `main`. See the [included `pre-commit.yml` Action](./.github/actions/precommit.yaml).
