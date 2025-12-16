@@ -1,0 +1,7 @@
+repos:
+- repo: https://github.com/kynan/nbstripout
+  ## Check the latest release tag in the repo linked above,
+  #  or run pre-commit autoupdate occasionally to bump the version
+  rev: 0.8.2
+  hooks:
+  - id: nbstripout
